@@ -69,6 +69,15 @@ public class JFrameJava extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableMostrarLlamadas = new javax.swing.JTable();
         jButtonMostrarLlamada = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jButtonIniciarLlamada = new javax.swing.JButton();
+        jButtonFinLlamada = new javax.swing.JButton();
+        jTextFieldIDEmisor = new javax.swing.JTextField();
+        jTextFieldIDRECEPTOR = new javax.swing.JTextField();
+        jTextFieldCostoPorMinuto = new javax.swing.JTextField();
+        label15 = new java.awt.Label();
+        label16 = new java.awt.Label();
+        label17 = new java.awt.Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -416,6 +425,75 @@ public class JFrameJava extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab5", jPanel5);
 
+        jButtonIniciarLlamada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/call.png"))); // NOI18N
+        jButtonIniciarLlamada.setText("Iniciar Llamada");
+
+        jButtonFinLlamada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/old-handphone.png"))); // NOI18N
+        jButtonFinLlamada.setText("Finalizar Llamada");
+
+        jTextFieldIDRECEPTOR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIDRECEPTORActionPerformed(evt);
+            }
+        });
+
+        label15.setText("Id Emisor");
+
+        label16.setText("Id Receptor");
+
+        label17.setText("Costo por minuto");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(99, 99, 99)
+                .addComponent(jButtonIniciarLlamada)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addComponent(jButtonFinLlamada)
+                .addGap(118, 118, 118))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(65, 65, 65)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextFieldCostoPorMinuto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextFieldIDRECEPTOR, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldIDEmisor, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(213, 213, 213))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonIniciarLlamada)
+                    .addComponent(jButtonFinLlamada))
+                .addGap(52, 52, 52)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextFieldIDEmisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldIDRECEPTOR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextFieldCostoPorMinuto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(95, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab6", jPanel6);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -463,6 +541,10 @@ public class JFrameJava extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonMostrarUsuariosActionPerformed
 
+    private void jTextFieldIDRECEPTORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDRECEPTORActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIDRECEPTORActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -502,6 +584,8 @@ public class JFrameJava extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAñadirLlamada;
     private javax.swing.JButton jButtonAñadirTelefono;
     private javax.swing.JButton jButtonAñadirUsuario;
+    private javax.swing.JButton jButtonFinLlamada;
+    private javax.swing.JButton jButtonIniciarLlamada;
     private javax.swing.JButton jButtonMostrarLlamada;
     private javax.swing.JButton jButtonMostrarUsuarios;
     private javax.swing.JCheckBox jCheckBoxCeluTel;
@@ -510,14 +594,18 @@ public class JFrameJava extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTableContactos;
     private javax.swing.JTable jTableMostrarLlamadas;
     private javax.swing.JTextField jTextFieldCosto;
+    private javax.swing.JTextField jTextFieldCostoPorMinuto;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldFinLlamada;
+    private javax.swing.JTextField jTextFieldIDEmisor;
+    private javax.swing.JTextField jTextFieldIDRECEPTOR;
     private javax.swing.JTextField jTextFieldIdPersona;
     private javax.swing.JTextField jTextFieldIdpersona;
     private javax.swing.JTextField jTextFieldIniciollamada;
@@ -531,6 +619,9 @@ public class JFrameJava extends javax.swing.JFrame {
     private java.awt.Label label12;
     private java.awt.Label label13;
     private java.awt.Label label14;
+    private java.awt.Label label15;
+    private java.awt.Label label16;
+    private java.awt.Label label17;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;
