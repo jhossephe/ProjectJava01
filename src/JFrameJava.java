@@ -35,8 +35,6 @@ public class JFrameJava extends javax.swing.JFrame {
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
         jTextFieldEmail = new javax.swing.JTextField();
-        label5 = new java.awt.Label();
-        jTextFieldIdpersona = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableContactos = new javax.swing.JTable();
@@ -82,7 +80,6 @@ public class JFrameJava extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButtonAñadirUsuario.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jButtonAñadirUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/edit.png"))); // NOI18N
         jButtonAñadirUsuario.setText("Añadir");
         jButtonAñadirUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,8 +94,6 @@ public class JFrameJava extends javax.swing.JFrame {
 
         label2.setText("Email");
 
-        label5.setText("Id");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -107,15 +102,9 @@ public class JFrameJava extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(162, 162, 162)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldIdpersona, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                                .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                        .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(193, 193, 193)
                         .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -130,11 +119,7 @@ public class JFrameJava extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextFieldIdpersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(71, 71, 71)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -166,7 +151,6 @@ public class JFrameJava extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTableContactos);
 
         jButtonMostrarUsuarios.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jButtonMostrarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload.png"))); // NOI18N
         jButtonMostrarUsuarios.setText("Mostrar");
         jButtonMostrarUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +176,7 @@ public class JFrameJava extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonMostrarUsuarios)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Tabla usuarios", jPanel2);
@@ -208,7 +192,6 @@ public class JFrameJava extends javax.swing.JFrame {
 
         label4.setText("Celular/Telefono");
 
-        jButtonAñadirTelefono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/edit.png"))); // NOI18N
         jButtonAñadirTelefono.setText("Añadir");
         jButtonAñadirTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -294,7 +277,6 @@ public class JFrameJava extends javax.swing.JFrame {
             }
         });
 
-        jButtonAñadirLlamada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/edit.png"))); // NOI18N
         jButtonAñadirLlamada.setText("Añadir");
         jButtonAñadirLlamada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -369,7 +351,7 @@ public class JFrameJava extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(jButtonAñadirLlamada)
                 .addGap(35, 35, 35))
         );
@@ -394,7 +376,6 @@ public class JFrameJava extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTableMostrarLlamadas);
 
-        jButtonMostrarLlamada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload.png"))); // NOI18N
         jButtonMostrarLlamada.setText("Mostrar");
         jButtonMostrarLlamada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -418,7 +399,7 @@ public class JFrameJava extends javax.swing.JFrame {
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonMostrarLlamada)
                 .addContainerGap())
@@ -426,10 +407,8 @@ public class JFrameJava extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Mostrar Llamadas", jPanel5);
 
-        jButtonIniciarLlamada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/call.png"))); // NOI18N
         jButtonIniciarLlamada.setText("Iniciar Llamada");
 
-        jButtonFinLlamada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/old-handphone.png"))); // NOI18N
         jButtonFinLlamada.setText("Finalizar Llamada");
 
         jTextFieldIDRECEPTOR.addActionListener(new java.awt.event.ActionListener() {
@@ -526,7 +505,7 @@ public class JFrameJava extends javax.swing.JFrame {
     private void jButtonAñadirUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirUsuarioActionPerformed
         // TODO add your handling code here:
         Funciones func = new Funciones();
-        ClassPersona p = new ClassPersona(Integer.parseInt(jTextFieldIdPersona.getText()), jTextFieldEmail.getText());
+        ClassPersona p = new ClassPersona(0, jTextFieldEmail.getText());
       func.insertarPersona(p);
     }//GEN-LAST:event_jButtonAñadirUsuarioActionPerformed
 
@@ -535,8 +514,9 @@ public class JFrameJava extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAñadirLlamadaActionPerformed
 
     private void jButtonAñadirTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirTelefonoActionPerformed
-        // TODO add your handling code here:
-        
+        Funciones func = new Funciones();
+        ClassTelefono t = new ClassTelefono(Integer.parseInt(jTextFieldIdPersona.getText()), Integer.parseInt(jTextFieldNumeroPersona.getText()),jCheckBoxCeluTel.isSelected());
+        func.insertarTelefono(t);
     }//GEN-LAST:event_jButtonAñadirTelefonoActionPerformed
 
     private void jButtonMostrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarUsuariosActionPerformed
@@ -610,7 +590,6 @@ public class JFrameJava extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldIDEmisor;
     private javax.swing.JTextField jTextFieldIDRECEPTOR;
     private javax.swing.JTextField jTextFieldIdPersona;
-    private javax.swing.JTextField jTextFieldIdpersona;
     private javax.swing.JTextField jTextFieldIniciollamada;
     private javax.swing.JTextField jTextFieldNumeroPersona;
     private javax.swing.JTextField jTextFieldRealizaLlamada;
@@ -628,7 +607,6 @@ public class JFrameJava extends javax.swing.JFrame {
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;
-    private java.awt.Label label5;
     private java.awt.Label label6;
     private java.awt.Label label7;
     private java.awt.Label label8;

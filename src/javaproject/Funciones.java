@@ -110,8 +110,7 @@ public class Funciones {
                 + "VALUES (NULL , ?)";
                 con = conexion.getInstance().getConnection();
                 PreparedStatement pstm = con.prepareStatement(sql);
-                pstm.setInt(1, p.getIdPersona());
-                pstm.setString(2, p.getEmail());
+                pstm.setString(1, p.getEmail());
                 pstm.executeUpdate();
                 pstm.close();
                 
