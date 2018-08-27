@@ -520,7 +520,7 @@ public class JFrameJava extends javax.swing.JFrame {
     private void jButtonMostrarLlamadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarLlamadaActionPerformed
         // TODO add your handling code here:
         Funciones func = new Funciones();
-        jTableMostrarLlamadas.setModel(func.selectLlamada());
+        jTableMostrarLlamadas.setModel(func.select2());
     }//GEN-LAST:event_jButtonMostrarLlamadaActionPerformed
 
     private void jButtonAñadirUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirUsuarioActionPerformed
@@ -540,8 +540,7 @@ public class JFrameJava extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAñadirTelefonoActionPerformed
 
     private void jButtonMostrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarUsuariosActionPerformed
-        Funciones func1 = new Funciones();
-        jTableContactos.setModel(func1.selectUser());
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonMostrarUsuariosActionPerformed
 
     private void jTextFieldIDRECEPTORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDRECEPTORActionPerformed
