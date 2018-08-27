@@ -25,59 +25,8 @@ import Entidades.ClassLlamada;
 public class Funciones {
     private static Conexion conexion;
     private Connection con;
-    public String select()
-    {
-        String letras = "ID Llegada\tID Salida\tEMAIL Llegada\tEMAIL Salida\tINICIO LLAMADA\tFIN LLAMADA\tTIPO LLAMADA\tCOSTO DE LLAMADA\n";
-        try {
-            int id;
-            int id2;
-            String email;
-            String email2;
-            String inicio;
-            String fin;
-            String tipo;
-            double costo;
-            String res;
-            String sql = "SELECT\n"
-                        +"nuevadb.p1.IDPersona,\n"
-                        +"nuevadb.p2.IDPersona,\n"
-                        +"nuevadb.p1.email,\n"
-                        +"nuevadb.p2.email,\n"
-                        +"nuevadb.llamada.inicioLlamada,\n"
-                        +"nuevadb.llamada.finLlamada,\n"
-                        +"nuevadb.llamada.tipoLlamada,\n"
-                        +"nuevadb.llamada.costoTotal\n"
-                        +"FROM\n" 
-                        +"nuevadb.persona p1,\n"
-                        +"nuevadb.persona p2,\n"
-                        +"nuevadb.llamada\n"
-                        +"WHERE\n"
-                        +"nuevadb.p1.IDPersona = nuevadb.llamada.IDPersonaLlegada AND nuevadb.p2.IDPersona = nuevadb.llamada.IDPersonaSalida";
-                    con = conexion.getInstance().getConnection();
-                    Statement st = con.createStatement();
-                    ResultSet rs = st.executeQuery(sql);
-                    while(rs.next())
-                    {   
-                        id = rs.getInt(1);
-                        id2 = rs.getInt(2);
-                        email = rs.getString(3);
-                        email2 = rs.getString(4);
-                        inicio = rs.getString(5);
-                        fin = rs.getString(6);
-                        tipo = rs.getString(7);
-                        costo = rs.getDouble(8);
-                        letras += id+"\t"+id2+"\t"+email+"\t"+email2+"\t"+inicio+"\t"+fin+"\t"+tipo+"\t"+costo+"\n";
-                    }
-                    con.commit();
-                    con.close();
-                    
-        } catch (SQLException ex) {
-            Logger.getLogger(Funciones.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       return letras;
-    }
     
-    public DefaultTableModel select2()
+    public DefaultTableModel selectLlamada()
     {
         ResultSet variablex = null;
         DefaultTableModel modelo = new DefaultTableModel();
@@ -106,6 +55,41 @@ public class Funciones {
                     try{
                         while(variablex.next()){
                             modelo.addRow(new Object[]{variablex.getString(1),variablex.getString(2),variablex.getString(3),variablex.getString(4),variablex.getString(5),variablex.getString(6)});
+                        }   
+                    } catch(Exception e){
+
+                    }
+                   
+                    con.commit();
+                    con.close();
+                    
+        } catch (SQLException ex) {
+            Logger.getLogger(Funciones.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       return modelo;
+    }
+    
+    public DefaultTableModel selectUser()
+    {
+        ResultSet variablex = null;
+        DefaultTableModel modelo = new DefaultTableModel();
+        String letras = "ID\tNOMBRE\tEDAD\tTELEFONO\n";
+        try {
+            
+            String sql = "SELECT\n"
+                        +"nuevadb.persona.IDPersona,\n"
+                        +"nuevadb.persona.Email\n"
+                        +"FROM\n" 
+                        +"nuevadb.persona\n";
+                   
+                    con = conexion.getInstance().getConnection();
+                    Statement st = con.createStatement();
+                    variablex = st.executeQuery(sql);
+                   
+                    modelo.setColumnIdentifiers(new Object[]{"ID Persona","Email"});
+                    try{
+                        while(variablex.next()){
+                            modelo.addRow(new Object[]{variablex.getString(1),variablex.getString(2)});
                         }   
                     } catch(Exception e){
 
