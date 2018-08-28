@@ -163,4 +163,48 @@ public class Funciones {
         Logger.getLogger(Funciones.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public int[] Estadisticas(){
+        int[] aux= new int[5];
+            int cont1=0,cont2=0,cont3=0;
+        try {
+            String sql = "SELECT\n"
+                        +"nuevadb.llamada.tipoLlamada\n"
+                        +"FROM\n" 
+                        +"nuevadb.persona p1,\n"
+                        +"nuevadb.persona p2,\n"
+                        +"nuevadb.llamada\n"
+                        +"WHERE\n"
+                        +"nuevadb.p1.IDPersona = nuevadb.llamada.IDPersonaLlegada AND nuevadb.p2.IDPersona = nuevadb.llamada.IDPersonaSalida";
+                    con = conexion.getInstance().getConnection();
+                    Statement st = con.createStatement();
+                    ResultSet rs = st.executeQuery(sql);
+                    while(rs.next())
+                    {   
+                        if(rs.getString(1).equals("Local")) {
+                            cont1++;
+                        }
+                        else
+                        {
+                            if(rs.getString(1).equals("Internacional")){
+                                cont2++;
+                            }
+                            else{
+                                if(rs.getString(1).equals("Celular")){
+                                    cont3++;
+                                }
+                            }
+                        }
+                    }
+                    con.commit();
+                    con.close();
+                    
+        } catch (SQLException ex) {
+            Logger.getLogger(Funciones.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        aux[0]=cont1;
+        aux[1]=cont2;
+        aux[2]=cont3;
+        return aux;
+    }
 }

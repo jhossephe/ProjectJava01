@@ -20,7 +20,7 @@ public class Conexion {
     private Conexion() throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            this.connection = DriverManager.getConnection("jdbc:mysql://192.168.0.102/nuevadb", "root2", "");
+            this.connection = DriverManager.getConnection("jdbc:mysql://localhost/nuevadb", "root", "");
             this.connection.setAutoCommit(false);
         } catch (ClassNotFoundException ex) {
             System.out.println("Database Connection Creation Failed : " + ex.getMessage());

@@ -561,12 +561,12 @@ public class JFrameJava extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+       Funciones func = new Funciones();
+        int[] vec = func.Estadisticas();
         final DefaultPieDataset result = new DefaultPieDataset();
-            result.setValue("Java", new Double(43.2));
-            result.setValue("Phython", new Double(10.0));
-            result.setValue("JavaScript", new Double(17.5));
-            result.setValue("C", new Double(32.5));
-            result.setValue("Angular JS", new Double(1.0));
+            result.setValue("Local", vec[0]);
+            result.setValue("Internacional", vec[1]);
+            result.setValue("Celular", vec[2]);
 
         final PieDataset dataset = result;
 
