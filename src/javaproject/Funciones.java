@@ -218,8 +218,92 @@ public class Funciones {
         return aux;
     }
     
-    public void excelllamada(){
+    public void excelUsuarios(){
         String nombreArchivo="Usuarios.xlsx";
+        String rutaArchivo= "C:\\Users\\LENOVO\\Downloads\\Ficherso Excel\\"+nombreArchivo;
+        String hoja="Hoja1";
+        String [][] document= new String [200][200];
+
+        XSSFWorkbook libro= new XSSFWorkbook();
+        XSSFSheet hoja1 = libro.createSheet(hoja);
+        //cabecera de la hoja de excel
+        String [] header= new String[]{"IDPersona", "Email","Telefono","Es Celular:"};
+        try {
+            
+            String sql =    "SELECT\n"
+                            +"nuevadb.persona.IDPersona,\n"
+                            +"nuevadb.persona.Email,\n"
+                            +"nuevadb.telefono.numeroDeTelefono,\n"
+                            +"nuevadb.telefono.esCelular\n"
+                            +"FROM\n"
+                            +"nuevadb.persona,\n"
+                            +"nuevadb.telefono\n"
+                            +"WHERE\n"
+                            +"persona.IDPersona = telefono.IDPersona\n";
+                        con = conexion.getInstance().getConnection();
+                        Statement st = con.createStatement();
+                        ResultSet rs = st.executeQuery(sql);
+                        int i=0;
+                        try{
+                            while(rs.next())
+                            {
+                                document[i][0]=rs.getString(1);
+                                document[i][1]=rs.getString(2);
+                                document[i][2]=rs.getString(3);
+                                document[i][3]=rs.getString(4);
+                                i++;
+                            }
+                        }
+                        catch(SQLException ex){}
+                        //poner negrita a la cabecera
+                            CellStyle style = libro.createCellStyle();
+                            Font font = libro.createFont();
+                            font.setBold(true);
+                            style.setFont(font);
+                        //generar los datos para el documento
+                          for ( i = 0; i <= document.length; i++) {
+                            XSSFRow row=hoja1.createRow(i);//se crea las filas
+                            for (int j = 0; j <header.length; j++) {
+                              if (i==0) {//para la cabecera
+                                  XSSFCell cell= row.createCell(j);//se crea las celdas para la cabecera, junto con la posición
+                                  cell.setCellStyle(style); // se añade el style crea anteriormente 
+                                  cell.setCellValue(header[j]);//se añade el contenido          
+                              }else{//para el contenido
+                                XSSFCell cell= row.createCell(j);//se crea las celdas para la contenido, junto con la posición
+                                cell.setCellValue(document[i-1][j]); //se añade el contenido
+                              }       
+                            }
+                          }
+ 
+                    con.commit();
+                    con.close();
+                    
+        } catch (SQLException ex) {
+            Logger.getLogger(Funciones.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        File file;
+                        file = new File(rutaArchivo);
+                        try (FileOutputStream fileOuS = new FileOutputStream(file)){            
+                          if (file.exists()) {// si el archivo existe se elimina
+                            file.delete();
+                            System.out.println("Archivo eliminado");
+                          }
+                          libro.write(fileOuS);
+                          fileOuS.flush();
+                          fileOuS.close();
+                          System.out.println("Archivo Creado");
+
+                        } catch (FileNotFoundException e) {
+                          e.printStackTrace();
+                        }catch (IOException e) {
+                          e.printStackTrace();
+                        }
+    
+    }
+    
+    public void excelllamada(){
+        String nombreArchivo="llamadas.xlsx";
         String rutaArchivo= "C:\\Users\\LENOVO\\Downloads\\Ficherso Excel\\"+nombreArchivo;
         String hoja="Hoja1";
         String [][] document= new String [200][200];
